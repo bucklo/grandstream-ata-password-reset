@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+  Minimal config: sets only the web UI admin password.
+  1. Rename this file to cfg<your-mac>.xml (lowercase, no separators).
+  2. Put the same MAC in <mac> below (uppercase is fine).
+  3. Change P2 to the password you want.
+-->
+<gs_provision version="1">
+<mac>000B82AABBCC</mac>
+  <config version="1">
+    <P2>admin</P2>                <!-- Admin password (web UI) -->
+  </config>
+</gs_provision>

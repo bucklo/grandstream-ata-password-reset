@@ -1,0 +1,15 @@
+# systemd unit for darkhttpd serving ATA provisioning files.
+#   apt install darkhttpd
+#   mkdir -p /srv/ata-prov && cp cfg<mac>.xml /srv/ata-prov/
+#   cp ata-prov.service /etc/systemd/system/ && systemctl enable --now ata-prov
+[Unit]
+Description=Grandstream ATA provisioning (darkhttpd)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+ExecStart=/usr/bin/darkhttpd /srv/ata-prov --addr 192.0.2.5 --port 80 --log /var/log/ata-prov.log --chroot --uid nobody --gid nogroup
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

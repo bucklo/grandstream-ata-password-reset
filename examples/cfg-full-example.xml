@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+  Fuller example: admin password + one SIP account + optional hotline.
+  This is the file we served to an HT801 (one FXS port), with our own
+  values replaced by placeholders. Rename it to cfg<your-mac>.xml.
+-->
+<gs_provision version="1">
+<mac>000B82AABBCC</mac>
+  <config version="1">
+    <!-- ============ Device admin ============ -->
+    <P2>CHANGE-ME</P2>            <!-- Admin password (web UI) -->
+
+    <!-- ============ Account 1 / FXS port 1 ============ -->
+    <P271>1</P271>                <!-- Account active -->
+    <P3>Analog Phone</P3>         <!-- Display name -->
+    <P47>192.0.2.10:5060</P47>    <!-- Primary SIP server (your PBX) -->
+    <P967></P967>                 <!-- Failover SIP server (cleared) -->
+    <P48></P48>                   <!-- Outbound proxy (cleared) -->
+    <P2333></P2333>               <!-- Backup outbound proxy (cleared) -->
+    <P130>0</P130>                <!-- SIP transport: 0=UDP -->
+    <P52>0</P52>                  <!-- NAT traversal: 0=No -->
+    <P35>1001</P35>               <!-- SIP User ID -->
+    <P36>1001</P36>               <!-- Authenticate ID -->
+    <P34>SIP-PASSWORD</P34>       <!-- Authenticate password -->
+    <P31>1</P31>                  <!-- SIP registration: enabled -->
+    <P32>5</P32>                  <!-- Register expiration (minutes) -->
+
+    <!-- ============ Optional: hotline ============ -->
+    <!-- Lifting the handset dials this number straight away. Leave empty to disable. -->
+    <P71>2000</P71>               <!-- Offhook Auto-Dial -->
+    <P29>0</P29>                  <!-- Early Dial: 0=off (this is not a delay) -->
+  </config>
+</gs_provision>

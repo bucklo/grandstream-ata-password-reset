@@ -1,0 +1,3 @@
+# Real provisioning files contain passwords. Keep them out of git.
+cfg*.xml
+!examples/*.xml
